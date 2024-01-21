@@ -15,7 +15,7 @@ type Props = {
 }
 
 const InputNumber: FC<Props> = (({ addonAfter, value, eventHandler }) => {
-    return <StyledInputNumber min={0} value={value} onChange={eventHandler} addonAfter={addonAfter} />
+    return <StyledInputNumber inputMode='decimal' min={0} value={value} onChange={eventHandler} addonAfter={addonAfter} />
 })
 
 export default InputNumber
