@@ -20,7 +20,7 @@ const App: FC = () => {
     setCurrency(prev => [...prev].reverse())
   }
   return (
-    <Space direction="horizontal" >
+    <Space direction="horizontal">
       <InputNumber eventHandler={(e: number) => setFromValue(e)} addonAfter={<Select eventHandler={val => setCurrency(prev => [val, prev[1]])} value={currency[0]} />} value={fromValue} />
 
       <Button icon={<FaExchangeAlt />} onClick={() => changeCurrency()} />
