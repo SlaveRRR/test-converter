@@ -14,8 +14,8 @@ type Props = {
     eventHandler?: (e: number) => void;
 }
 
-const InputNumber: FC<Props> = ({ addonAfter, value, eventHandler }) => {
-    return <StyledInputNumber value={value} onChange={eventHandler} addonAfter={addonAfter}  />
-}
+const InputNumber: FC<Props> = (({ addonAfter, value, eventHandler }) => {
+    return <StyledInputNumber min={0} value={value} onChange={eventHandler} addonAfter={addonAfter} />
+})
 
 export default InputNumber

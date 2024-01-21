@@ -10,6 +10,7 @@ const { Option } = AntdSelect;
 
 const IconContainer = styled.div`
     display: flex;
+    flex-direction:column;
 `
 
 type Props = {
@@ -23,7 +24,7 @@ const Select: FC<Props> = ({ eventHandler, value }) => {
 
             <Option value="ETH">
                 <IconContext.Provider value={{ color: '#4a4b8f', size: '18px' }}>
-                    <IconContainer> <FaEthereum /></IconContainer>
+                    <IconContainer><FaEthereum /></IconContainer>
                 </IconContext.Provider>
             </Option>
 
