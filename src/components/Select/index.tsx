@@ -3,7 +3,7 @@ import { FaBitcoin, FaEthereum } from "react-icons/fa";
 import { IconContext } from 'react-icons';
 import { SiTether } from "react-icons/si";
 import { Select as AntdSelect } from 'antd';
-import { CurrencyType, SelectValueType } from '../../types/currency';
+import { CurrencyType} from '../../types/currency';
 import styled from 'styled-components';
 
 const { Option } = AntdSelect;
@@ -21,7 +21,6 @@ type Props = {
 const Select: FC<Props> = ({ eventHandler, value }) => {
     return (
         <AntdSelect onChange={eventHandler} value={value} style={{ width: 60 }}>
-
             <Option value="ETH">
                 <IconContext.Provider value={{ color: '#4a4b8f', size: '18px' }}>
                     <IconContainer><FaEthereum /></IconContainer>
