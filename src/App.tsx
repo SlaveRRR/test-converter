@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { FaExchangeAlt } from "react-icons/fa";
 import { Button, Divider, Space as antdSpace, Typography } from 'antd';
 import InputNumber from './components/InputNumber';
@@ -78,7 +78,7 @@ const App: FC = () => {
 
   const onChangeFromValue = (eventValue: number) => {
 
-    setFromValue(prev => eventValue ? eventValue : 1)
+    setFromValue(eventValue || 1)
 
     const to = eventValue ? eventValue * price : price;
 
@@ -91,7 +91,7 @@ const App: FC = () => {
 
   const onChangeToValue = (eventValue: number) => {
 
-    setToValue(prev => eventValue ? eventValue : 1)
+    setToValue(eventValue || 1)
 
     const from = eventValue ? eventValue / price : 1 / price;
 
@@ -113,7 +113,7 @@ const App: FC = () => {
       getCurrencyData(fromCurr, toCurr)
         .then(rate => {
           setPrice(rate)
-          setToValue(prev => +(fromValue * rate).toFixed(6))
+          setToValue(Number((fromValue * rate).toFixed(6)))
         })
     }
 
